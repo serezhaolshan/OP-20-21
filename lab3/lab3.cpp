@@ -21,6 +21,12 @@ int main()
 
 	printf("Введите x, y >");
 	scanf("%lf %lf", &x, &y);
+	/*if (x < 0) {
+		printf("Х не попадает в ОДЗ");
+	}
+	if (y < 0) {
+		
+	}*/
 
 	double ax = 3 * pow(a, 3) * x * y;
 
