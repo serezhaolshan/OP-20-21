@@ -18,8 +18,9 @@ int main()
 	d = pow(b, 2) - 4.0 * a * c;
 
 	if (d > 0) {
-		x1 = (-b + sqrt(d)) / 2 * a;
-		x2 = (-b - sqrt(d)) / 2 * a;
+		printf("D = %f\n", d);
+		x1 = (-b + sqrt(d)) / (2 * a);
+		x2 = (-b - sqrt(d)) / (2 * a);
 		printf("x1 > %f\n", x1);
 		printf("x2 > %f\n", x2);
 	
