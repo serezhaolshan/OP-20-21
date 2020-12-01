@@ -11,27 +11,29 @@ int main()
 
 	int a, b, c;
 	double d, x1, x2;
-	
-	printf("Введи коэффициенты a, b, c >");
-	scanf("%d %d %d", &a, &b, &c);
+	while (1) {
 
-	d = pow(b, 2) - 4.0 * a * c;
+		printf("Введи коэффициенты a, b, c >");
+		scanf("%d %d %d", &a, &b, &c);
 
-	if (d > 0) {
-		printf("D = %f\n", d);
-		x1 = (-b + sqrt(d)) / (2 * a);
-		x2 = (-b - sqrt(d)) / (2 * a);
-		printf("x1 > %f\n", x1);
-		printf("x2 > %f\n", x2);
-	
-	}
-	else if(d < 0){
-		printf("Дискриминант меньше 0 => нет корней");
-	}
-	else {
-		x1 = (-b + sqrt(d)) / 2 * a;
-		printf("Дискриминант равен 0 => один корень:\n");
-		printf("x1 > %f\n", x1);
+		d = pow(b, 2) - 4.0 * a * c;
+
+		if (d > 0) {
+			printf("D = %f\n", d);
+			x1 = (-b + sqrt(d)) / (2 * a);
+			x2 = (-b - sqrt(d)) / (2 * a);
+			printf("x1 > %f\n", x1);
+			printf("x2 > %f\n", x2);
+
+		}
+		else if (d < 0) {
+			printf("Дискриминант меньше 0 => нет корней");
+		}
+		else {
+			x1 = (-b + sqrt(d)) / 2 * a;
+			printf("Дискриминант равен 0 => один корень:\n");
+			printf("x1 > %f\n", x1);
+		}
 	}
 	return 0;
 }

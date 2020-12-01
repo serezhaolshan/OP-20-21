@@ -4,20 +4,23 @@ using namespace std;
 
 int main()
 {
+    const int n = 10;
+    int a[n]{};
+    int answ = 0;
 
-    string a[10]{};
+    cout << "Курите?" << endl << "1.Да" << endl << "2.Нет" << endl << "Введите цифру:";
+    cin >> answ;
 
-    for (int i = 0; i < 10; i++) {
-        string answ = "";
-        cout << "КУРИТЕ???";
-        cin >> answ;
-        if (answ == "ДА" || answ == "Да" || answ == "дА" || answ == "да") {
-            a[i] = "B";
+    switch (answ) {
+    case(1):
+        for (int i = 0; i < 5; i++) {
+            if (a[i] = 1) continue;
+            else a[i] = 1; break;
         }
-        else {
-            
-        }
+    case(2):
     }
+
+   
 }
 
 
