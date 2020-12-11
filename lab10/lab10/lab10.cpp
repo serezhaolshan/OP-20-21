@@ -1,18 +1,16 @@
-﻿#include <ctime>
-#include <iostream>
-#include <time.h>
-void filling(int* M, int N);
-void CountAverage(int* M, int N);
-// void Array2matrix(int* arr[], int* matrix[][]);
+﻿#include <iostream>
+#include <ctime>
+#include <cstdlib>
+//void filling(int* M, int N);
+//double CountAverage(int* arr, int* M, int* N);
 
 using namespace std;
 
 void filling(int* M, int N)
 {
-    const int variant = 14;
-    srand(time_t(NULL));
+    srand(time(0));
     for (int i = 0; i < N; i++)
-        M[i] = 5 * variant + rand() % 10 * variant;
+        M[i] = rand() % 100;
 }
 
 double CountAverage(int* Mass, int N, int M)
@@ -27,7 +25,7 @@ double CountAverage(int* Mass, int N, int M)
         Sum += min;
     }
     double average = Sum / N;
-    cout << average << endl;
+    cout << endl << "average:" << average << endl;
     return average;
 }
 
@@ -41,7 +39,7 @@ int main()
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < M; j++)
-            cout << matrix[i][j] << ' ';
+            cout << matrix[i][j] << '\t';
         cout << endl;
     }
 
