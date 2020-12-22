@@ -6,22 +6,25 @@
 
 using namespace std;
 
-void filling(int* M, int N)
-{
-    srand(time(0));
-    for (int i = 0; i < N; i++)
-        M[i] = rand() % 100;
-}
+//void filling(int* M, int N)
+//{
+//    srand(time(0));
+//    for (int i = 0; i < N; i++)
+//        M[i] = rand() % 100;
+//}
 
-double CountAverage(int* Mass, int N, int M)
+double CountAverage(int arr[], int N, int M)
 {
     double Sum = 0;
+
+    int arr2[N][M];
+   
     for (int i = 0; i < N; i++)
     {
-        int min = Mass[i * M];
+        int min = arr[i * M];
         for (int j = 1; j < M; j++)
-            if (Mass[i * M + j] < min)
-                min = Mass[i * M + j];
+            if (arr[i * M + j] < min)
+                min = arr[i * M + j];
         Sum += min;
     }
     double average = Sum / N;
@@ -29,21 +32,34 @@ double CountAverage(int* Mass, int N, int M)
     return average;
 }
 
+
+
 int main()
 {
-    const int N = 3;
-    const int M = 3;
-    int matrix[N][M];
+    const int row = 3;
+    const int col = 3;
+    
+    const int size = row * col;
 
-    filling(&matrix[0][0], N * M);
-    for (int i = 0; i < N; i++)
-    {
-        for (int j = 0; j < M; j++)
-            cout << matrix[i][j] << '\t';
-        cout << endl;
+    int arr[size];
+
+    /*filling(&arr[0][0], N * M);*/
+
+    for (int i = 0; i < size; i++) { 
+        arr[i] = rand() % 100;
     }
 
-    CountAverage(&matrix[0][0], N, M);
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << '\t';
+    }
+
+    CountAverage(arr, row, col);
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << '\t';
+    }
 
     return 0;
 }
